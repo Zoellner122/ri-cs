@@ -11,6 +11,8 @@ Currently that means that the following projects are included:
 - Terraform
 - Packer
 
+! [RI-CS Network](misc/rics.drawio.png)
+
 # To-Do:
 ## Base infra:
     - [] Implement DHCP to ease provisioning
@@ -18,19 +20,18 @@ Currently that means that the following projects are included:
     - [] Implement selfhosted GitLab (Also for CI/CD)
 
 ## Terraform:
-    - [] Finish implementation of Terraform (provider is capable of correctly managing resources)
-    - [] Write the additional base infrastructure as code:
-        - [] Nameservers
-        - [] Puppet server
+    - [ ] Finish implementation of Terraform (provider is capable of correctly managing resources)
+    - [ ] Write the additional base infrastructure as code:
+        - [ ] Nameservers
+        - [ ] Puppet server
 
 ## Packer:
-    - [] Continue testing with image generation
-    - [] Create some base images
+    - [ ] Continue testing with image generation
+    - [ ] Create some base images
         - [x] AlmaLinux 8
-        - [] AlmaLinux 9
-        - [] Ubuntu 22.04
-        - [] Ubuntu 22.10
-        - [] Arch
-
+        - [ ] AlmaLinux 9
+        - [ ] Ubuntu 22.04
+        - [ ] Ubuntu 22.10
+        - [ ] Arch
 
 
