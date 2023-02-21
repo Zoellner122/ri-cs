@@ -1,0 +1,54 @@
+#cloud-config
+autoinstall:
+  version: 1
+   
+  refresh-installer:
+    update: yes
+  
+  keyboard:
+    layout: "us"
+    variant: "us"
+  
+  network:
+    network:
+      version: 2
+      ethernets:
+        ens18:
+          addresses:
+            - 141.95.79.1/27
+          nameservers:
+            addresses: [1.1.1.1]
+          gateway4: 141.95.79.30
+
+  storage:
+    layout:
+      name: "lvm"
+    swap:
+      size: 0
+
+  ssh:
+    install-server: true
+    allow-pw: true
+  user-data:
+    disable-root: false
+    users:
+      - name: root
+        lock-passwd: false
+        passwd: $6$sbwSXry4/OWHWmea$okvtnF9m7io0lqbOKnBqSoxSgUnajoLOhuchU1aoNZVKgVnTj3k.r0EpfQlmJc0IdIS.wgkEPccq7PtnEi/qG/
+      #- name: packer
+      #  lock-passwd: false
+      #  passwd: $6$sbwSXry4/OWHWmea$okvtnF9m7io0lqbOKnBqSoxSgUnajoLOhuchU1aoNZVKgVnTj3k.r0EpfQlmJc0IdIS.wgkEPccq7PtnEi/qG/
+  
+  apt:
+    preserve_sources_list: false
+    primary:
+        - arches: [i386, amd64]
+          uri: http://nl.archive.ubuntu.com/ubuntu/
+        - arches: [default]
+          uri: "http://nl.ports.ubuntu.com/ubuntu-ports"
+    geoip: true
+
+  packages:
+    - "qemu-guest-agent"
+    - "net-tools"
+    - "fish"
