@@ -3,9 +3,9 @@ resource "proxmox_vm_qemu" "puppet" {
     clone       = "almalinux-8.7-RICS"
     target_node = "prox02"
 
-    memory  = 8196
-    cores   = 4
-    cpu     = "host"
+    memory      = 8196
+    cores       = 4
+    cpu         = "host"
 
     network {
       model     = "virtio"
@@ -25,7 +25,7 @@ resource "proxmox_vm_qemu" "puppet" {
     }
 
     os_type     = "cloud-init"
-	  ciuser		= var.cloud_init_user
+	  ciuser		  = var.cloud_init_user
 	  cipassword  = var.cloud_init_pass
-	  sshkeys 	= var.cloud_init_ssh
+	  sshkeys 	  = var.cloud_init_ssh
 }
