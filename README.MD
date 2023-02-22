@@ -16,7 +16,7 @@ Additionally to be implemented are:
 - Ansible / AWX
 
 Potential changes might be:
-- Changing from Proxmox to a different implemtation (e.g Harvester by Rancher)
+- Changing from Proxmox to a different implemtation (e.g Harvester by Rancher or OpenNebula)
 
 ## Diagram:
 
