@@ -30,7 +30,7 @@ Ri-CS has hosted, for example a OpenStack Xena cluster before returning to Proxm
 
 # To-Do:
 ## Base infra:
-- [ ] Implement DHCP to ease provisioning
+- [x] Implement DHCP to ease provisioning
 - [ ] Further implement GlusterFS (maybe) for shared storage (Might not be fully possible due to spit-brain scenario as there are only 2 main Proxmox nodes and a virtual arbiter)
 - [ ] Implement selfhosted GitLab (Also for CI/CD)
 
