@@ -25,6 +25,8 @@ git
 wget
 qemu-guest-agent
 cloud-init
+cloud-utils-growpart
+gdisk
 dhclient
 %end
 
