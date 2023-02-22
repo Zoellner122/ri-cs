@@ -1,5 +1,5 @@
 terraform/variables.tf
-terraform/test.tf.disabled
+terraform/*.disabled
 terraform/terraform.tfstate.*
 terraform/terraform.tfstate
 terraform/.terraform
