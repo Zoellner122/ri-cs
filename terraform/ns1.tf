@@ -12,11 +12,13 @@ resource "proxmox_vm_qemu" "ns1" {
      model  = "virtio"
      bridge = "vmbr1"
     }
+
     network {
      model  = "virtio"
      bridge = "vmbr1"
      tag    = 1001
     }
+    
     disk {
      type    = "virtio"
      storage = "ISO"
