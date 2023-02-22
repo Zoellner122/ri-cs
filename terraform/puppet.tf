@@ -24,6 +24,12 @@ resource "proxmox_vm_qemu" "puppet" {
      size    = "40G"
     }
 
+    disk {
+     type    = "virtio"
+     storage = "ISO"
+     size    = "100G"
+    }
+
     os_type      = "cloud-init"
     ciuser       = var.cloud_init_user
     cipassword   = var.cloud_init_pass
