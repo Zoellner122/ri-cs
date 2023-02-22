@@ -8,24 +8,24 @@ resource "proxmox_vm_qemu" "puppet" {
     cpu         = "host"
 
     network {
-      model     = "virtio"
-      bridge    = "vmbr1"
+     model     = "virtio"
+     bridge    = "vmbr1"
     }
 
     network {
-      model     = "virtio"
-      bridge    = "vmbr1"
-      tag       = 1001
+     model     = "virtio"
+     bridge    = "vmbr1"
+     tag       = 1001
     }
 
     disk {
-        type    = "virtio"
-        storage = "ISO"
-        size    = "40G"
+     type    = "virtio"
+     storage = "ISO"
+     size    = "40G"
     }
 
     os_type     = "cloud-init"
-	  ciuser		  = var.cloud_init_user
-	  cipassword  = var.cloud_init_pass
-	  sshkeys 	  = var.cloud_init_ssh
+    ciuser      = var.cloud_init_user
+    cipassword  = var.cloud_init_pass
+    sshkeys     = var.cloud_init_ssh
 }
