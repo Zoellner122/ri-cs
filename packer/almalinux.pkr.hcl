@@ -20,6 +20,7 @@ build {
             "rm -fr /root/~*",
             "passwd -d root",
             "passwd -l root",
+            "> /etc/sysconfig/network-scripts/ifcfg-ens18",
             "> /var/log/syslog",
             "> /var/log/messages"
         ]

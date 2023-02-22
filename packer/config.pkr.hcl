@@ -10,7 +10,7 @@ packer {
 source "proxmox" "iso" {
     username                    = var.proxmox_user
     token                       = var.proxmox_token
-    proxmox_url                 = "https://141.95.85.197:8006/api2/json"
+    proxmox_url                 = var.proxmox_api
     node                        = "prox01"        
     iso_storage_pool            = "ISO"
     ssh_username                = "root"

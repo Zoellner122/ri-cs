@@ -25,6 +25,7 @@ git
 wget
 qemu-guest-agent
 cloud-init
+dhclient
 %end
 
 %post
