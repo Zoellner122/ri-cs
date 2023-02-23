@@ -1,16 +1,15 @@
 terraform {
-    required_providers {
-     proxmox  = {
-      source  = "Telmate/proxmox"
-      version = "2.9.13"
+  required_providers {
+    opennebula = {
+      source = "OpenNebula/opennebula"
+      version = "1.1.1"
     }
   }
 }
 
-provider "proxmox" {
-  pm_api_url          = var.prox_node
-  pm_api_token_id     = var.prox_token_user
-  pm_api_token_secret = var.prox_token_secret
-  pm_tls_insecure     = true
+provider "opennebula" {
+  endpoint      = var.on_endpoint
+  flow_endpoint = var.on_flowendpoint
+  username      = var.on_user
+  password      = var.on_pass
 }
-
