@@ -7,7 +7,7 @@ This is the project page of the next iteration of the Ri-CS sandbox network.
 This project will include some new technologies that I've started to pick up either in professional life or that seemed interesting to learn about.
 
 Currently that means that the following projects are included:
-- Proxmox
+- OpenNebula 
 - Terraform
 - Packer
 
@@ -15,8 +15,6 @@ Additionally to be implemented are:
 - Puppet
 - Ansible / AWX
 
-Potential changes might be:
-- Changing from Proxmox to a different implemtation (e.g Harvester by Rancher or OpenNebula)
 
 ## Diagram:
 
