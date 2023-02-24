@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "ri-cs"
+
+    workspaces {
+      name = "ri-cs"
+    }
+  }
   required_providers {
     opennebula = {
       source = "OpenNebula/opennebula"
