@@ -9,7 +9,7 @@ This project will include some new technologies that I've started to pick up eit
 Currently that means that the following projects are included:
 - OpenNebula 
 - Terraform
-~~ - Packer ~~ See below
+- ~~Packer~~ See below
 
 Additionally to be implemented are:
 - Puppet
@@ -28,8 +28,8 @@ Ri-CS has hosted, for example a OpenStack Xena cluster before returning to Proxm
 
 # To-Do:
 ## Base infra:
-- ~~ [x] Implement DHCP to ease provisioning ~~ Handled by OpenNebula
-- ~~ [ ] Further implement GlusterFS (maybe) for shared storage (Might not be fully possible due to spit-brain scenario as there are only 2 main Proxmox nodes and a virtual arbiter) ~~ OpenNebula does not use Gluster and as a result this is also handled by OpenNebula
+- ~~[x] Implement DHCP to ease provisioning~~ Handled by OpenNebula
+- ~~[ ] Further implement GlusterFS (maybe) for shared storage (Might not be fully possible due to spit-brain scenario as there are only 2 main Proxmox nodes and a virtual arbiter)~~ OpenNebula does not use Gluster and as a result this is also handled by OpenNebula
 - [ ] Implement selfhosted GitLab (Also for CI/CD)
 
 ## Terraform:
@@ -42,12 +42,12 @@ Ri-CS has hosted, for example a OpenStack Xena cluster before returning to Proxm
 OpenNebula has a marketplace for images that are custom made for use by OpenNebula.
 As a result at this moment there is no need for generation of custom images; however, this might still be done for fine tuning images.
 
-~~ - [ ] Continue testing with image generation ~~
-~~ - [ ] Create some base images: ~~
-~~    - [x] AlmaLinux 8 ~~
-~~    - [ ] AlmaLinux 9 ~~
-~~    - [ ] Ubuntu 22.04 ~~
-~~    - [ ] Ubuntu 22.10 ~~
-~~    - [ ] Arch ~~
+ - ~~[ ] Continue testing with image generation ~~
+ - ~~[ ] Create some base images: ~~
+   - ~~[x] AlmaLinux 8~~
+    - ~~[ ] AlmaLinux 9~~
+    - ~~[ ] Ubuntu 22.04~~
+    - ~~[ ] Ubuntu 22.10~~
+    - ~~[ ] Arch~~
 
 
