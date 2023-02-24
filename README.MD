@@ -42,8 +42,8 @@ Ri-CS has hosted, for example a OpenStack Xena cluster before returning to Proxm
 OpenNebula has a marketplace for images that are custom made for use by OpenNebula.
 As a result at this moment there is no need for generation of custom images; however, this might still be done for fine tuning images.
 
- - ~~[ ] Continue testing with image generation ~~
- - ~~[ ] Create some base images: ~~
+ - ~~[ ] Continue testing with image generation~~
+ - ~~[ ] Create some base images:~~
    - ~~[x] AlmaLinux 8~~
     - ~~[ ] AlmaLinux 9~~
     - ~~[ ] Ubuntu 22.04~~
