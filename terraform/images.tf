@@ -18,3 +18,23 @@ resource "opennebula_image" "ubuntu_20_04" {
   permissions = "644"
 }
 
+resource "opennebula_image" "ubuntu_22_04" {
+  name = "Ubuntu 22.04 LTS"
+  description = "Image for Ubuntu 22.04 LTS"
+  datastore_id = 1
+  persistent = false
+  path = "https://marketplace.opennebula.io//appliance/4562be1a-4c11-4e9e-b60a-85a045f1de05/download/0"
+
+  permissions = "644"
+}
+
+resource "opennebula_image" "virtual-router" {
+  name = "Service Virtual Router"
+  description = "Appliace for Virtual Router"
+  datastore_id = 1
+  persistent = false
+  path = "https://marketplace.opennebula.io//appliance/cc96d537-f6c7-499f-83f1-15ac4058750e/download/0"
+
+  permissions = "644"
+  
+}
