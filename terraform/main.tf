@@ -20,3 +20,15 @@ provider "opennebula" {
   username      = var.on_user
   password      = var.on_pass
 }
+
+data "terraform_remote_state" "rics" {
+  backend = "remote"
+
+  config = {
+    organization = "ri-cs"
+    workspaces = {
+      name = "ri-cs"
+    }
+
+   }
+}
