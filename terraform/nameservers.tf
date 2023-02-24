@@ -95,6 +95,12 @@ resource "opennebula_security_group" "resolvers" {
     rule_type = "INBOUND"
     range = "22"
   }
+
+  rule {
+    protocol = "TCP"
+    rule_type = "INBOUND"
+    range = "53"
+  }
   
   rule {
     protocol = "ICMP"
