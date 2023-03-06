@@ -112,8 +112,8 @@ resource "opennebula_virtual_machine" "test" {
   context = {
     NETWORK = "YES"
     HOSTNAME = "$NAME"
-    SSH_PUBLIC_KEY = "$USER[SSH_PUBLIC_KEY]"
-    PASSWORD = "$var.on_rick_pass"
+    SSH_PUBLIC_KEY = var.rick_ssh_key
+    PASSWORD = var.on_rick_pass
   }
 
   os {
