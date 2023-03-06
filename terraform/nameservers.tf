@@ -3,7 +3,7 @@ resource "opennebula_virtual_machine" "ns01" {
 
     name = "ns01"
     description = "Nameserver for Ri-CS"
-
+    
     cpu = 2
     memory = 2048
     permissions = "660"
@@ -12,7 +12,7 @@ resource "opennebula_virtual_machine" "ns01" {
       TOKEN = "YES"
       NETWORK = "YES"
       HOSTNAME = "$NAME"
-      SSH_PUBLIC_KEY = "$USER[SSH_PUBLIC_KEY]"
+      SSH_PUBLIC_KEY = var.rick_ssh_key
     }
 
     os {
@@ -54,7 +54,7 @@ resource "opennebula_virtual_machine" "ns02" {
       TOKEN = "YES"
       NETWORK = "YES"
       HOSTNAME = "$NAME"
-      SSH_PUBLIC_KEY = "$USER[SSH_PUBLIC_KEY]"
+      SSH_PUBLIC_KEY = var.rick_ssh_key
     }
 
     os {
@@ -106,6 +106,4 @@ resource "opennebula_security_group" "resolvers" {
     protocol = "ICMP"
     rule_type = "INBOUND"
   }
-
-  
 }
