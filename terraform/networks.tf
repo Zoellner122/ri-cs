@@ -1,13 +1,14 @@
 resource "opennebula_virtual_network" "rics-vrack141" {
   name = "rics_vrack141"
   description = "Connection through OVH-Vrack"
-  bridge = "virbr1"
   type = "ovswitch"
+  bridge = "virbr1"
+  physical_device = "eno2"
   vlan_id = 0
   dns = "1.1.1.1"
   gateway = "141.95.79.30"
 
-  permissions = "664"
+  permissions = "774"
 
 }
 
@@ -21,13 +22,14 @@ resource "opennebula_virtual_network_address_range" "rics-141" {
 resource "opennebula_virtual_network" "rics-vrack51" {
   name = "rics_vrack51"
   description = "Connection through OVH-Vrack"
-  bridge = "virbr1"
   type = "ovswitch"
+  bridge = "virbr1"
+  physical_device = "eno2"
   vlan_id = 0
   dns = "1.1.1.1"
   gateway = "51.195.97.206"
 
-  permissions = "664"
+  permissions = "774"
 }
 
 resource "opennebula_virtual_network_address_range" "rics-51" {
