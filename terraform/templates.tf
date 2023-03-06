@@ -1,6 +1,6 @@
 resource "opennebula_virtual_router_instance_template" "vr-template" {
   name = "virtual-router-template"
-  permissions = "642"
+  permissions = "744"
   
   cpu = "0.5"
   memory = "1024"
@@ -18,6 +18,7 @@ resource "opennebula_virtual_router_instance_template" "vr-template" {
 
   os {
     arch = "x86_64"
-    boot = ""
+    boot = "disk0"
   }
+
 }
