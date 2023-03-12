@@ -1,5 +1,5 @@
 resource "opennebula_virtual_network" "rics-internal" {
-  name = "RI-CS Internal"
+  name = "rics_internal"
   description = "Internal network for RI-CS"
 
   group = opennebula_group.rics.name
@@ -7,18 +7,16 @@ resource "opennebula_virtual_network" "rics-internal" {
   physical_device = "eno2"
   bridge = "virbr1"
   automatic_vlan_id = true
-
-  gateway = "10.101.0.1"
-  dns = "10.101.0.1"
-  
+ 
   permissions = 770
+
 }
 
 resource "opennebula_virtual_network_address_range" "rics-internal" {
     virtual_network_id = opennebula_virtual_network.rics-internal.id
     ar_type = "IP4"
     size = 100
-    ip4 = "10.101.0.2"
+    ip4 = "10.101.0.1"
 }
 
 resource "opennebula_virtual_router" "rics-gateway" {
@@ -41,8 +39,12 @@ resource "opennebula_virtual_router_instance" "rics-gateway" {
       TOKEN = "YES"
       SSH_PUBLIC_KEY = var.rick_ssh_key
       HOSTNAME = "$NAME"
+
+      # Virtual Router settings
       ONEAPP_VNF_NAT4_ENABLED = "YES"
       ONEAPP_VNF_NAT4_INTERFACES_OUT = "eth0"
+
+
     }
 
     disk {
@@ -97,8 +99,6 @@ resource "opennebula_virtual_machine" "rics-bastion" {
     model = "virtio"
     network_id = opennebula_virtual_network.rics-internal.id
   }
-
-
 }
 
 resource "opennebula_virtual_machine" "test" {
@@ -136,5 +136,5 @@ resource "opennebula_virtual_machine" "test" {
   nic {
     model = "virtio"
     network_id = opennebula_virtual_network.rics-internal.id
-  } 
+  }
 }
