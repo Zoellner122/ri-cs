@@ -33,7 +33,7 @@ resource "opennebula_image" "virtual-router" {
   description = "Appliace for Virtual Router"
   datastore_id = 1
   persistent = false
-  path = "https://marketplace.opennebula.io//appliance/cc96d537-f6c7-499f-83f1-15ac4058750e/download/0"
+  path = "https://marketplace.opennebula.io//appliance/7dba6a0d-73e8-4036-9cb8-73da669ee494/download/0"
 
   permissions = "644"
   
