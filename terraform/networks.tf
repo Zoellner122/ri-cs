@@ -38,3 +38,24 @@ resource "opennebula_virtual_network_address_range" "rics-51" {
     size = 13
     ip4 = "51.195.97.193"
 }
+
+resource "opennebula_virtual_network" "rics-internal" {
+  name = "rics_internal"
+  description = "Internal network for RI-CS"
+
+  group = opennebula_group.rics.name
+  type = "ovswitch"
+  physical_device = "eno2"
+  bridge = "virbr1"
+  automatic_vlan_id = true
+ 
+  permissions = 770
+
+}
+
+resource "opennebula_virtual_network_address_range" "rics-internal" {
+    virtual_network_id = opennebula_virtual_network.rics-internal.id
+    ar_type = "IP4"
+    size = 100
+    ip4 = "10.101.0.2"
+}
