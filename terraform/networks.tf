@@ -50,6 +50,7 @@ resource "opennebula_virtual_network" "rics-internal" {
   automatic_vlan_id = true
  
   permissions = 770
+  gateway = "10.101.0.1"
 
 }
 
@@ -57,5 +58,54 @@ resource "opennebula_virtual_network_address_range" "rics-internal" {
     virtual_network_id = opennebula_virtual_network.rics-internal.id
     ar_type = "IP4"
     size = 100
-    ip4 = "10.101.0.2"
+    ip4 = "10.101.0.1"
+}
+
+resource "opennebula_virtual_router" "rics-gateway" {
+  name = "rics-gateway"
+  permissions = "744"
+
+  instance_template_id = opennebula_virtual_router_instance_template.vr-template.id
+}
+
+resource "opennebula_virtual_router_nic" "external-rics" {
+  virtual_router_id = opennebula_virtual_router.rics-gateway.id
+  network_id = opennebula_virtual_network.rics-vrack141.id
+}
+
+resource "opennebula_virtual_router_nic" "internal-rics" {
+  virtual_router_id = opennebula_virtual_router.rics-gateway.id
+  network_id = opennebula_virtual_network.rics-internal.id
+}
+
+resource "opennebula_virtual_router_instance" "rics-gateway" {
+    name = "rics-gateway"
+    permissions = "744"
+    group = "rics"
+
+    memory = "1024"
+    cpu = "0.5"
+    virtual_router_id = opennebula_virtual_router.rics-gateway.id
+
+    context = {
+      NETWORK = "YES"
+      TOKEN = "YES"
+      SSH_PUBLIC_KEY = var.rick_ssh_key
+      SET_HOSTNAME = "$NAME"
+
+      # Virtual Router settings
+      ONEAPP_VNF_NAT4_ENABLED = "YES"
+      ONEAPP_VNF_NAT4_INTERFACES_OUT = "eth0"
+      ONEAPP_VNF_ROUTER4_ENABLED = "YES"
+
+    }
+    os {
+      arch = "x86_64"
+      boot = "disk0"
+    }
+
+    disk {
+      size = 2048
+      image_id = opennebula_image.virtual-router.id
+    }
 }
