@@ -37,5 +37,23 @@ resource "opennebula_virtual_machine" "rics-bastion" {
   nic {
     model = "virtio"
     network_id = opennebula_virtual_network.rics-vrack141.id
+    security_groups = [ opennebula_security_group.bastion.id ]
   }
+}
+
+resource "opennebula_security_group" "bastion" {
+  name = "bastion"
+  description = "Rules for Bastion Host"
+
+  rule {
+    protocol = "ALL"
+    rule_type = "OUTBOUND"
+  }
+
+  rule {
+    protocol = "TCP"
+    rule_type = "INBOUND"
+    range = "22"
+  }
+  
 }
