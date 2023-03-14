@@ -11,7 +11,7 @@ resource "opennebula_virtual_machine" "ns01" {
     context = {
       TOKEN = "YES"
       NETWORK = "YES"
-      HOSTNAME = "$NAME"
+      SET_HOSTNAME = "$NAME"
       SSH_PUBLIC_KEY = var.rick_ssh_key
     }
 
@@ -53,7 +53,7 @@ resource "opennebula_virtual_machine" "ns02" {
     context = {
       TOKEN = "YES"
       NETWORK = "YES"
-      HOSTNAME = "$NAME"
+      SET_HOSTNAME = "$NAME"
       SSH_PUBLIC_KEY = var.rick_ssh_key
     }
 
